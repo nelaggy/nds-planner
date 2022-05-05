@@ -4,68 +4,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>nds planner</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<style>
-		body {
-			font-family: Tahoma;
-			/*text-align: center;*/
-		}
-		#container {
-			margin: auto;
-			vertical-align: middle;
-			width: fit-content;
-		}
-		#form {
-			width: fit-content;
-			margin: auto;
-		}
-		button {
-			font-size: large;
-			width: 40%;
-		}
-		#ans {
-			text-align: center;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-	<div id='container'>
-		<h3>instructions</h3>
-		<p>
-		1. choose a series of waypoints connected by <b>straight-line</b> paths<br>
-		2. for each pair of waypoints, A and B, where the intent is to traverse from A to B,<br> measure and enter the respective MGRs<br>
-		3. round off however you like :)
-		</p>
-		<br>
-		<div id='form'>
-			<form action='javascript:readForm()'>
-				<h4>point A</h4>
-				<div>
-					<label for='ea'>easting</label>
-					<input type='text' id='ea', name='ea'>
-				</div>
-				<div>
-					<label for='na'>northing</label>
-					<input type='text' id='na', name='na'>
-				</div>
-				<h4>point B</h4>
-				<div>
-					<label for='eb'>easting</label>
-					<input type='text' id='eb', name='eb'>
-				</div>
-				<div>
-					<label for='nb'>northing</label>
-					<input type='text' id='nb', name='nb'>
-				</div>
-				<br>
-				<input type="submit" hidden>
-			</form>
-			<button id='submit'>calculate</button>
+	<main>
+		<div class='intro'>
+			<h3>instructions</h3>
+			<p>
+			1. choose a series of waypoints connected by <b>straight-line</b> paths<br>
+			2. for each pair of waypoints, A and B, where the intent is to traverse from A to B,<br> measure and enter the respective MGRs<br>
+			3. round off however you like :)
+			</p>
+			<br>
 		</div>
-		<div id='ans'>
-			<h3 id='dist'></h3>
-			<h3 id='angle'></h3>
+		<div class='point-container'>
+			<div class='point-holder add-point'>
+			</div>
+			<div class='point-holder add-point'>
+			</div>
 		</div>
-	</div>
-	<script src='index.js'></script>
+	</main>
+	<script src='index-old.js'></script>
 </body>
 </html>
