@@ -4,9 +4,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>nds planner</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
+	<div class='popup-bg'>
+		<div class='popup-window'>
+			<h1 class='popup-label'>new point</h1>
+			<form>
+				<div class='popup-inputs'>
+					<input type="text" name="e" id='mgr-input-e' placeholder="easting">
+					<input type="text" name="n" id='mgr-input-n' placeholder="northing">
+				</div>
+				<div class='popup-actions'>
+					<button class='cancel'>cancel</button>
+					<button class='submit'>continue</button>
+				</div>
+			</form>
+		</div>
+	</div>
 	<main>
 		<div class='intro'>
 			<h3>instructions</h3>
@@ -18,9 +35,33 @@
 			<br>
 		</div>
 		<div class='point-container'>
-			<div class='point-holder add-point'>
+			<div class='point-item add-point' id='add-point-start'>
+				<div class='point-icon'>
+					<span class="material-icons">place</span>
+				</div>
+				<div class='point-mgr'>
+					<div class='point-e'>1234</div>
+					<div class='point-n'>5678</div>
+				</div>
+				<div class='point-actions'>
+					<span class='material-icons action-button'>add</span>
+					<span class='material-icons action-button'>edit</span>
+					<span class='material-icons action-button'>delete</span>
+				</div>
 			</div>
-			<div class='point-holder add-point'>
+			<div class='point-item add-point' id='add-point-start'>
+				<div class='point-icon'>
+					<span class="material-icons">place</span>
+				</div>
+				<div class='point-mgr'>
+					<div class='point-e'>1234</div>
+					<div class='point-n'>5678</div>
+				</div>
+				<div class='point-actions'>
+					<span class='material-icons action-button'>add</span>
+					<span class='material-icons action-button'>edit</span>
+					<span class='material-icons action-button'>delete</span>
+				</div>
 			</div>
 		</div>
 	</main>
