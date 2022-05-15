@@ -31,7 +31,6 @@ main {
 	width: 100%;
 	z-index: 20;
 	background-color: rgba(0, 0, 0, 0.5);
-	visibility: hidden;
 }
 
 .popup-window {
@@ -109,6 +108,10 @@ button {
 	justify-content: flex-end;
 	margin-left: auto;
 	margin-right: 0;
+}
+
+.point-actions:hover {
+	cursor: pointer;
 }
 
 .action-button {
