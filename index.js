@@ -1,20 +1,24 @@
 let points = [];
 
-function newPoint(i){ /*dialog box to add easting and northing of new point*/
-	loadPopup(null,null,false,i);
+function calcDist(dx, dy, scale){ //returns dist between 2 points
+	return 10**scale*Math.sqrt(dx**2 + dy**2); // 4 digit mgr is in units of decametres => multiply by 10 to convert to m
 }
 
-function editPoint(e, n, i){ /*dialog box to modify easting and northing of existing point*/
-	[e,n] = loadPopup(e,n);
-	if(e==null || n==null){
-		return;
+function calcAngle(dx, dy){ //returns bearing of point B from point A
+	let alpha = Math.atan(dx/dy);
+	if(dx>=0){
+		if(dy>=0){
+			return 3200*alpha/Math.PI; 		// dx>0, dy>0 => add 0
+		} else if(dy<0){
+			return 3200*(1+ alpha/Math.PI); // dx>0, dy<0 => add 3200
+		}
+	} else if(dx<0){
+		if(dy>=0){
+			return 3200*(2+alpha/Math.PI);  // dx<0, dy>0 => add 6400
+		} else if(dy<0){
+			return 3200*(1+alpha/Math.PI);  // dx<0, dy<0 => add 3200
+		}
 	}
-	
-	loadList();
-}
-
-function delPoint(i){ /*removes point*/
-	
 }
 
 function loadItem(i, $container){
@@ -92,9 +96,29 @@ function loadList(){
 	}
 }
 
-
+function loadTable(){
+	let $container = $('.nds-container');
+	let reps = points.length;
+	$container.empty();
+	$container.append('<tr><th>from (mgr)</th><th>to (mgr)</th><th>distance (m)</th><th>direction (mils)</th></tr>')
+	for(var i=0; i<reps-1; i++){
+		let e1 = points[i]['e'],
+			e2 = points[i+1]['e'],
+			n1 = points[i]['n'],
+			n2 = points[i+1]['n'];
+		let scale = 5 - e1.toString().length
+		let dist = Math.round(calcDist(e2-e1, n2-n1, scale));
+		let angle = Math.round(calcAngle(e2-e1, n2-n1));
+		let $newRow = `<tr><td>${e1} ${n1}</td><td>${e2} ${n2}</td><td>${dist}</td><td>${angle}</td></tr>`
+		$container.append($newRow);
+	}
+}
 
 
 $(document).ready(function(){
 	loadList();
+	$('#generate-nds').on('click', function(ev){
+		ev.preventDefault();
+		loadTable();
+	})
 });

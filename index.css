@@ -123,3 +123,21 @@ button {
 .action-button:hover {
 	background-color: rgba(0,0,0,0.3);
 }
+
+.generate, .nds-container {
+	width: fit-content;
+	margin: auto;
+	padding: 20px;
+}
+
+.nds {
+	padding: 4px;
+	text-align: center;
+}
+
+td, th {
+	padding: 4px;
+	border-width: thin;
+	border-style: solid;
+	min-width: 50px;
+}
