@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+	font-family: Tahoma;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*text-align: center;*/
+
+}
+
+main {
+	padding: 20px;
+	margin: auto;
+	vertical-align: middle;
+	width: fit-content;
+}
+
+#form {
+	width: fit-content;
+	margin: auto;
+}
+
+.popup-bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 20;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-window {
+	width: fit-content;
+	margin: auto;
+	margin-top: 30vh;
+	z-index: 30;
+	background-color: #ffffff;
+	padding: 20px;
+}
+
+.popup-label {
+
+}
+
+.popup-inputs {
+
+}
+
+.popup-actions {
+	float: right;
+	width: fit-content;
+	margin-top: 20px;
+}
+
+.popup-window:after {
+    content:'';
+    display:block; /* or whatever else than inline */
+   	clear:both;
+}
+
+button {
+	font-size: large;
+	width: fit-content;
+}
+
+#ans {
+	text-align: center;
+}
+
+.point-item {
+	border: solid;
+	border-width: thin;
+	border-color: darkgray;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+.point-mgr {
+	display: inline-block;
+}
+
+.point-icon, .point-e, .point-n, .point-actions {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 28px;
+}
+
+.point-icon {
+	margin-left: 20px;
+}
+
+.material-icons {
+	font-size: 36px;
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.point-e, .point-n {
+	margin-left: 8px;
+}
+
+.point-actions {
+	display: inline-flex;
+	justify-content: flex-end;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.point-actions:hover {
+	cursor: pointer;
+}
+
+.action-button {
+	padding: 8px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.action-button:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+.generate, .nds-container {
+	width: fit-content;
+	margin: auto;
+	padding: 20px;
+}
+
+.nds {
+	padding: 4px;
+	text-align: center;
+}
+
+td, th {
+	padding: 4px;
+	border-width: thin;
+	border-style: solid;
+	min-width: 50px;
+}
